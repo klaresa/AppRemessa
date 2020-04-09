@@ -1,0 +1,109 @@
+
+=> RESPONSAVEL
+
+obterLista: GET http://localhost:8080/api/responsavel
+
+incluir: POST http://localhost:8080/api/responsavel
+{
+	"nome" : "Ana",
+	"celular" : "212121",
+	"email" : "ana@ana.com"
+}
+
+excluir: DELETE http://localhost:8080/api/responsavel/1
+
+===============================
+
+=> SUCULENTA
+
+obterLista: GET http://localhost:8080/api/suculenta
+
+incluir: POST http://localhost:8080/api/suculenta
+
+{
+	"tipo": "Suculenta",
+	"nome": "Cante",
+	"categoria": "Echeveria",
+	"descricao": "uma suculenta azul e branca",
+	"raridade": "rara",
+	"matriz": true
+}
+
+excluir: DELETE http://localhost:8080/api/suculenta/1
+
+=============================
+
+=> ORQUIDEA
+
+obterLista: GET http://localhost:8080/api/orquidea
+
+incluir: POST http://localhost:8080/api/orquidea
+
+{
+	"tipo": "Orquidea",
+	"nome": "Tetraspis",
+	"categoria": "Phalaenopsis",
+	"descricao": "uma orquidea amarela e vermelha",
+	"ambiente": "luminosidade sem luz solar direta",
+	"epifita": true
+}
+
+excluir: DELETE http://localhost:8080/api/orquidea/1
+
+
+=============================
+
+=> REMESSA
+
+obterLista: GET http://localhost:8080/api/remessa
+
+incluir: POST http://localhost:8080/api/remessa
+
+{ 
+	"venda": true,
+	"quantidadePlantas": "10",
+	"numeroParticipantes": "2",
+	"valorTotal": "1000",
+	"responsavel": {
+	"nome" : "Ana",
+	"celular" : "212121",
+	"email" : "ana@ana.com" 
+	}, "plantas": [
+	{
+	"tipo": "Suculenta",
+	"nome": "Pendens",
+	"categoria": "Cotyledon",
+	"descricao": "uma planta verde e vermelha",
+	"raridade": "comun",
+	"matriz": false
+	},
+	{
+	"tipo": "Orquidea",
+	"nome": "Tetraspis c1",
+	"categoria": "Phalaenopsis",
+	"descricao": "uma orquidea amarela e vermelha variegata",
+	"ambiente": "meia sombra",
+	"epifita": true
+	}]
+}
+
+excluir: DELETE http://localhost:8080/api/remessa/1
+
+
+=============================
+
+=> PLANTA
+
+obterLista: GET http://localhost:8080/api/planta
+
+incluir: POST http://localhost:8080/api/planta
+
+{
+	"tipo": "Orquidea",
+	"nome": "Tetraspis",
+	"categoria": "Phalaenopsis",
+	"descricao": "uma orquidea amarela e vermelha"
+}
+
+excluir: DELETE http://localhost:8080/api/planta/1
+obs: excluir apenas funciona se nao houver associacao
